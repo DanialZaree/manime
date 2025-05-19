@@ -1,0 +1,1340 @@
+@font-face {
+  font-family: "Reem Kufi Fun";
+  src: url("../assets/fonts/ReemKufiFun.eot");
+  src: local("../assets/fonts/"), local("../assets/fonts/"),
+    url("../assets/fonts/ReemKufiFun.eot?#iefix") format("embedded-opentype"),
+    url("../assets/fonts/ReemKufiFun.woff2") format("woff2"),
+    url("../assets/fonts/ReemKufiFun.woff") format("woff"),
+    url("../assets/fonts/ReemKufiFun.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+html {
+  overflow: hidden;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Reem Kufi Fun";
+  scroll-behavior: smooth;
+  border: 0;
+}
+/* default setting */
+
+html {
+  overflow-y: auto;
+  /* width */
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    width: 0;
+    border-radius: 0;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #f78600;
+    border-radius: 2px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #f96000;
+  }
+}
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Reem Kufi Fun";
+  scroll-behavior: smooth;
+  background: #111111;
+  overflow-x: hidden;
+  a {
+    display: flex;
+    width: auto; /* Width adjusts based on the child image */
+    height: auto;
+  }
+  div:focus,
+  img:focus,
+  a:focus,
+  button:focus {
+    outline: none;
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+    background-color: transparnet;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #f78600;
+  }
+}
+/* animation css */
+.overlay-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: 0 0;
+  box-shadow: inset 0 -23svh 23svh 7.5svh #111, inset 0 2.3svh 23svh 0 #111;
+  width: 100vw;
+  height: 101svh;
+  overflow: hidden;
+  z-index: 2;
+}
+.container-animation {
+  background: linear-gradient(0deg, #111 0, rgba(17, 17, 17, 0.9) 100%);
+  box-shadow: inset 0 0 250px 60px #111;
+  filter: blur(1.25px);
+  box-sizing: border-box;
+  width: 100svw;
+  height: 130svh;
+  display: grid;
+  place-content: center;
+}
+.container-animation-wrapper {
+  width: 100svw;
+  height: 100svh;
+  overflow: hidden;
+}
+.animation-flex-all {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(45deg);
+  white-space: nowrap;
+  position: relative;
+  top: -40%;
+  left: -25%;
+  width: 150%;
+  height: 150%;
+  overflow: hidden;
+}
+.scroller {
+  height: 16%;
+  width: 100%;
+  overflow: hidden;
+}
+.scroller__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14.8svh;
+}
+.scroller__inner img {
+  transform: rotate(-90deg);
+  height: 34svh;
+
+  aspect-ratio: 604/755;
+  opacity: 0.3;
+}
+.scroller[data-animated="true"] .scroller__inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 20s)
+    var(--_animation-direction, forwards) linear infinite;
+}
+.scroller[data-direction="right"] {
+  --_animation-direction: reverse;
+}
+.scroller[data-direction="left"] {
+  --_animation-direction: forwards;
+}
+.scroller[data-speed="fast"] {
+  --_animation-duration: 20s;
+}
+.scroller[data-speed="medium"] {
+  --_animation-duration: 40s;
+}
+.scroller[data-speed="slow"] {
+  --_animation-duration: 60s;
+}
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 7.5svh));
+  }
+}
+/* name and logo and msg and logo */
+.hero-sec {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.manime-mirror-hero {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  z-index: 2;
+  margin: -20px;
+}
+
+.name-logo-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.hentai-hero,
+.manime-hero {
+  color: #fff;
+  font-size: 3rem;
+  margin: -10px;
+}
+.hentai-hero {
+  color: #f78600;
+}
+.explore-a-wide {
+  margin-top: 1rem;
+  text-align: center;
+  color: #b8b8b8;
+  font-size: 1.25rem;
+  z-index: 2;
+}
+.angel-down {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50px;
+  z-index: 2;
+  transition: 0.3s;
+}
+.angel-down:hover {
+  opacity: 0.7;
+}
+/* navbar */
+
+/* aimation side nav */
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.slide-in {
+  animation: slide-in 1s forwards ease-in-out;
+}
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.slide-out {
+  animation: slide-out 1s forwards ease-in-out;
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  animation-name: fade-out;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation-name: fade-in;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+.hidden {
+  display: none;
+}
+.navbar {
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  width: 100vw;
+  height: 120px;
+  box-shadow: 0 0 10px rgba(29, 29, 29, 0.2);
+  backdrop-filter: blur(8px);
+  background: linear-gradient(
+    180deg,
+    rgba(29, 29, 29, 0.8) 0%,
+    rgba(29, 29, 29, 0.1) 100%
+  );
+  border: 1px solid;
+  border-image: linear-gradient(
+      to bottom,
+      rgba(247, 134, 0, 0.1),
+      rgb(247, 134, 0)
+    )
+    1;
+  box-sizing: border-box;
+  border-top: 0;
+  border-left: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  padding: 0 25px;
+}
+.navbar-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 120px;
+  z-index: 4;
+}
+.wrapper-nav {
+  display: flex;
+  align-items: center;
+}
+.name-logo {
+  height: 120px;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  margin: 0;
+  margin-left: 120px;
+  padding: 5px 0;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.manime,
+.hentai {
+  width: fit-content;
+  color: #ffffff;
+  font-size: 36px;
+  text-align: center;
+  letter-spacing: 0;
+  margin: -5px;
+}
+.hentai {
+  color: #f78600;
+}
+.fixed {
+  position: fixed;
+}
+.icon-menu {
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+.icon-menu:hover {
+  background: rgba(237, 147, 0, 0.1);
+}
+.icon-menu:active {
+  background: rgba(237, 147, 0, 0.1);
+}
+.form {
+  position: absolute;
+  width: 600px;
+  height: 70px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.form input {
+  text-align: center;
+}
+.search-wrapper {
+  position: relative;
+  width: 600px;
+  height: 70px;
+  border-radius: 60px;
+  border: solid 1px rgb(247, 134, 0);
+  border-radius: 80px;
+  caret-color: #f78600;
+  font-size: 1.5rem;
+  color: #ffffff;
+  box-sizing: border-box;
+  padding: 0 20px;
+  background: linear-gradient(
+    0deg,
+    rgba(29, 29, 29, 0.8) 0%,
+    rgba(29, 29, 29, 0.1) 100%
+  );
+}
+.search {
+  display: flex;
+  align-self: center;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  inset: 15px;
+}
+.search-res {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  display: none;
+}
+#search-input:focus-visible {
+  outline: none;
+}
+
+#search-input:focus ~ .search {
+  display: none;
+}
+#search-input.active ~ .search {
+  display: none;
+}
+
+.profile {
+  margin-left: 15px;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.profile:hover {
+  opacity: 0.8;
+  scale: 1.1;
+}
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+
+  50% {
+    scale: 1 1.5;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes overlay {
+  from {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.0001);
+    z-index: 2;
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 2;
+  }
+}
+.overlay {
+  animation: overlay 1.3s forwards;
+}
+@keyframes overlay-2 {
+  from {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+  to {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.0001);
+    z-index: 2;
+  }
+}
+.overlay-2 {
+  animation: overlay-2 1.3s forwards;
+}
+
+/* menu side navbar */
+a {
+  text-decoration: none;
+  width: inherit;
+  transition: all 0.3s;
+}
+
+.menu-navbar-2 {
+  display: grid;
+  align-items: center;
+  align-content: flex-end;
+}
+.menu-navbar-3 {
+  display: grid;
+  align-items: center;
+  align-content: flex-end;
+}
+.menu-navbar-1 {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100dvh;
+}
+.menu-navbar {
+  left: -100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-left: 0;
+  border-image: linear-gradient(
+      to right,
+      rgba(247, 134, 0, 0.1),
+      rgb(247, 134, 0)
+    )
+    1;
+  background: linear-gradient(
+    180deg,
+    rgba(29, 29, 29, 0.8) 0%,
+    rgba(29, 29, 29, 0.1) 100%
+  );
+  height: 100svh;
+  position: relative;
+  z-index: 3;
+  display: none;
+}
+
+.menu-navbar-active {
+  top: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-left: 0;
+  border-image: linear-gradient(
+      to right,
+      rgba(247, 134, 0, 0.1),
+      rgb(247, 134, 0)
+    )
+    1;
+  background: linear-gradient(
+    180deg,
+    rgba(29, 29, 29, 0.8) 0%,
+    rgba(29, 29, 29, 0.1) 100%
+  );
+  height: 100dvh;
+  width: 420px;
+  z-index: 5;
+  position: fixed;
+  backdrop-filter: blur(8px);
+}
+
+.vector-line-2 {
+  width: 98%;
+  height: 1px;
+  object-fit: cover;
+}
+.vector-line-1 {
+  width: 98%;
+  height: 1px;
+  margin-top: -3px;
+  object-fit: cover;
+}
+
+.sidebar-link {
+  cursor: pointer;
+  display: flex;
+  height: 80px;
+  align-items: center;
+  gap: 40px;
+  padding: 0 35px;
+}
+.close,
+.img {
+  height: 50px;
+}
+.close:hover,
+.sidebar-link:hover {
+  background: rgba(237, 147, 0, 0.1);
+}
+.img {
+  position: relative;
+  width: 50px;
+}
+.menu-navbar-text {
+  position: relative;
+  width: fit-content;
+  color: #c4c4c4;
+  font-size: 36px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.close {
+  position: relative;
+  cursor: pointer;
+  width: 50px;
+  margin: 35px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+/* slider */
+:root {
+  --accent: #f78600;
+  --accent-hover: #f79900;
+  --accent-active: #ffaa00;
+  --secondary: #ecefeb;
+  --secondary-hover: #e0e4de;
+  --secondary-active: #6c6c6b;
+  --content-primary: #0e0f0c;
+}
+
+.action-buttons {
+  position: relative;
+  overflow: visible;
+  display: inline-flex;
+  align-items: center;
+  gap: 60px;
+  scroll-snap-align: start;
+  width: 98%;
+  flex-wrap: wrap;
+}
+
+.action-button {
+  border-radius: 16px;
+  height: 32px;
+  gap: 4px;
+  cursor: pointer;
+  display: flex;
+  padding: 0 12px;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+  align-items: center;
+  text-decoration: none;
+  background-color: var(--secondary);
+}
+.slider-header {
+  color: #f9fef8;
+}
+
+.wrapper-header-slider {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+}
+.header-slider {
+  color: #f9fef8;
+  font: 40px Reem Kufi Fun, sans-serif;
+}
+
+.sub-header-slider {
+  text-decoration: underline;
+  color: #f78600;
+  font: 40px Reem Kufi Fun, sans-serif;
+}
+.action-button--primary:active {
+  background-color: var(--accent-active);
+}
+
+.action-button:active {
+  background-color: var(--secondary-active);
+}
+#action-button--next,
+#action-button--previous {
+  display: grid;
+  place-content: center;
+}
+#action-button--next,
+#action-button--previous {
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  width: 50px;
+  height: 100px;
+  background: #1d1d1d;
+  border: 1px solid var(--accent);
+}
+
+.button-svg {
+  width: 24px;
+  height: 24px;
+  color: #f78600;
+  transition: 0.3s;
+}
+
+#action-button--next:hover .button-svg,
+#action-button--previous:hover .button-svg {
+  scale: 1.2;
+}
+#action-button--next:disabled,
+#action-button--previous:disabled {
+  cursor: not-allowed;
+  border-color: gray;
+  background: #1d1d1d;
+}
+#action-button--next:disabled .button-svg,
+#action-button--previous:disabled .button-svg {
+  scale: 1;
+  color: gray;
+}
+
+#action-button--previous {
+  margin-left: auto;
+  transform: rotate(-90deg);
+}
+
+#action-button--next {
+  transform: rotate(90deg);
+}
+
+.action-button:hover {
+  background-color: var(--secondary-hover);
+}
+
+.action-button--primary {
+  background-color: var(--accent);
+}
+
+.action-button--primary:hover {
+  background-color: var(--accent-hover);
+}
+
+.action-button--primary:active {
+  background-color: var(--accent-active);
+}
+
+#bank-accounts {
+  display: flex;
+  padding: 16px 0px;
+  width: 100%;
+  flex-direction: row;
+  overflow: auto;
+}
+
+/* Chrome, Edge, and Safari */
+#bank-accounts::-webkit-scrollbar {
+  display: none;
+}
+
+#bank-accounts::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#bank-accounts::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 0;
+  border: 0;
+}
+
+.slider-container {
+  width: 85%;
+  min-width: 300px;
+  margin: 120px 8dvw;
+}
+.slider-content {
+  position: relative;
+  margin: 0 0.5rem 0 0.5rem;
+  height: 100%;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #1d1d1d;
+  display: inline-flex;
+  flex: 0 0 264px;
+  flex-grow: 1;
+  scroll-snap-align: start;
+  white-space: nowrap;
+  cursor: pointer;
+  align-content: center;
+  flex-direction: column;
+  font-size: 20px;
+  padding: 0 0 10px;
+  text-transform: capitalize;
+  overflow: hidden;
+  transition: 0.3s;
+  user-select: none;
+}
+
+.slider-content:hover {
+  background-color: #2d2d2d;
+}
+.slider-img-content {
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  position: relative;
+}
+.slider-overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.badge {
+  position: absolute;
+  z-index: 2;
+  padding: 0.2rem;
+  right: 0.3rem;
+  top: 0.3rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(29, 29, 29, 0.8);
+  backdrop-filter: blur(8px);
+  background: linear-gradient(
+    180deg,
+    rgba(29, 29, 29, 0.5) 0%,
+    rgba(29, 29, 29, 0.3) 100%
+  );
+  transition: all 0.3s;
+  transform: scale(0.9);
+}
+.slider-content:hover .badge {
+  transform: scale(1);
+}
+
+.slider-content-img {
+  aspect-ratio: 0.68;
+  object-fit: auto;
+  object-position: center;
+  width: 100%;
+  align-self: stretch;
+  border-radius: 5px 5px 0 0;
+  transition: 0.6s;
+}
+
+.slider-title {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #fff;
+  margin-top: 10px;
+  padding: 15px 10px 0 10px;
+}
+
+.slider-img-wrapper {
+  display: flex;
+  gap: 10px;
+  padding: 0 0 15px 0;
+  color: #b4b4b4;
+}
+
+.slider-img {
+  aspect-ratio: 1;
+  object-fit: auto;
+  object-position: center;
+  width: 24px;
+  margin: auto 0;
+}
+
+.slider-views {
+  font-size: large;
+}
+/* footer */
+.frame-footer {
+  position: relative;
+  border: 1px solid;
+  border-left: 0;
+  border-right: 0;
+  border-image: linear-gradient(
+      to top,
+      rgba(247, 134, 0, 0.1),
+      rgb(247, 134, 0)
+    )
+    1;
+  box-sizing: border-box;
+  width: 100dvw;
+  height: auto;
+  z-index: 2;
+}
+
+.footer {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: flex-start;
+  justify-items: center;
+  gap: 170px;
+  margin: 20px 30px;
+}
+
+.name-logo-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+}
+
+.manime-mirror {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.hentai-footer,
+.manime-footer {
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 48px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  margin: -20px;
+}
+
+.hentai-footer {
+  color: #f78600;
+}
+
+.group-footer {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+}
+.group-footer-logo {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  position: relative;
+}
+
+.header-group-footer {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.text-group-footer {
+  position: relative;
+  width: fit-content;
+  font-weight: 400;
+  color: #c4c4c4;
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  transition: all 0.3s;
+}
+.text-group-footer:hover {
+  transform: translate(3px, 3px);
+}
+
+.logo-group-footer {
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+  height: 260px;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.img {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+/* landing page */
+.none {
+  display: none;
+}
+
+/* responsive */
+@media screen and (max-width: 1200px) {
+  /* navbar */
+  .navbar {
+    height: 100px;
+  }
+  .name-logo {
+    height: 100px;
+  }
+  .manime,
+  .hentai {
+    font-size: 30px;
+  }
+  .form {
+    display: none;
+  }
+  .search-res {
+    display: block;
+    width: 55px;
+    height: 55px;
+  }
+  .profile {
+    width: 55px;
+    height: 55px;
+  }
+  .icon-menu {
+    width: 60px;
+    height: 60px;
+  }
+  .close {
+    width: 40px;
+    height: 40px;
+    margin: 25px 35px;
+  }
+  .img {
+    width: 40px;
+    height: 40px;
+  }
+  .menu-navbar-active {
+    width: auto;
+  }
+  .vector-line-1 {
+    margin-top: -3px;
+  }
+  .menu-navbar-text {
+    font-size: 26px;
+  }
+  .sidebar-link {
+    height: 70px;
+    padding: 0 35px 0 35px;
+  }
+  /* manime hero */
+  .manime-mirror-hero {
+    width: 120px;
+    height: 120px;
+  }
+  .hentai-hero,
+  .manime-hero {
+    font-size: 2.25rem;
+  }
+  .explore-a-wide {
+    margin-top: 0.75rem;
+    font-size: 1rem;
+  }
+  /* slider */
+  .slider-container {
+    width: 90%;
+    margin: 100px 4dvw;
+  }
+  .sub-header-slider,
+  .header-slider {
+    font-size: 36px;
+  }
+  #action-button--previous,
+  #action-button--next {
+    height: 90px;
+    width: 50px;
+  }
+  .slider-content {
+    flex: 0 0 230px;
+    margin: 0 0.4rem 0 0.4rem;
+  }
+  .slider-title {
+    font-size: 1rem;
+  }
+  .slider-img {
+    width: 20px;
+    height: 20px;
+  }
+  .slider-views {
+    font-size: medium;
+  }
+  .badge {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+  /* footer */
+  .footer {
+    grid-template-rows: 2fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 90px;
+  }
+  .manime-mirror {
+    width: 120px;
+    height: 120px;
+  }
+  .hentai-footer,
+  .manime-footer {
+    font-size: 40px;
+  }
+  .header-group-footer {
+    font-size: 28px;
+  }
+
+  .text-group-footer {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* navbar */
+  .navbar {
+    height: 100px;
+  }
+  .name-logo {
+    height: 100px;
+  }
+  .manime,
+  .hentai {
+    font-size: 30px;
+  }
+  .form {
+    display: none;
+  }
+  .search-res {
+    display: block;
+    width: 45px;
+    height: 45px;
+  }
+  .profile {
+    width: 45px;
+    height: 45px;
+  }
+  .icon-menu {
+    width: 55px;
+    height: 55px;
+  }
+  .close {
+    width: 45px;
+    height: 45px;
+    margin: 28px 34px;
+  }
+  .img {
+    width: 40px;
+    height: 40px;
+  }
+  .vector-line-1 {
+    margin-top: -5px;
+  }
+  .menu-navbar-text {
+    font-size: 26px;
+  }
+  .sidebar-link {
+    height: 70px;
+    padding: 0 35px 0 35px;
+  }
+  /* slider */
+  .sub-header-slider,
+  .header-slider {
+    font-size: 30px;
+  }
+  #action-button--next,
+  #action-button--previous {
+    display: none;
+  }
+  .slider-content {
+    flex: 0 0 140px;
+    margin: 0 0.4rem 0 0.4rem;
+  }
+  .slider-title {
+    margin: 0;
+    font-size: 0.75rem;
+    padding: 15px 10px 0 10px;
+  }
+  .slider-img-wrapper {
+    padding: 0 0 10px 0;
+  }
+  .slider-img {
+    width: 18px;
+    height: 18px;
+  }
+  .slider-views {
+    font-size: small;
+  }
+  .badge {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+  /* footer */
+  .footer {
+    grid-template-rows: 2fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 70px;
+  }
+  .manime-mirror {
+    width: 100px;
+    height: 100px;
+  }
+  .hentai-footer,
+  .manime-footer {
+    font-size: 32px;
+  }
+  .header-group-footer {
+    font-size: 22px;
+  }
+
+  .text-group-footer {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 568px) {
+  /* animation */
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .overlay-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: 0 0;
+    box-shadow: inset 0 -20svh 20svh 9svh #111, inset 0 010svh 20svh 0 #111;
+    width: 100vw;
+    height: 101svh;
+    overflow: hidden;
+    z-index: 2;
+  }
+  .animation-flex-all {
+    top: -20%;
+    left: -125%;
+    width: 250%;
+    height: 150%;
+  }
+  .animation-flex-all > :nth-child(1),
+  .animation-flex-all > :nth-child(2) {
+    display: none;
+  }
+  /* navbar */
+  .navbar {
+    height: 80px;
+  }
+  .name-logo {
+    height: 80px;
+    margin-left: 100px;
+  }
+  .manime,
+  .hentai {
+    font-size: 24px;
+  }
+  .form {
+    display: none;
+  }
+  .search-res {
+    width: 35px;
+    height: 35px;
+  }
+  .profile {
+    width: 35px;
+    height: 35px;
+  }
+  .icon-menu {
+    width: 45px;
+    height: 45px;
+  }
+  .close {
+    width: 35px;
+    height: 35px;
+    margin: 23px 28px;
+  }
+  .img {
+    width: 32px;
+    height: 32px;
+  }
+  .vector-line-1 {
+    margin-top: -5px;
+  }
+  .menu-navbar-text {
+    font-size: 22px;
+  }
+  .sidebar-link {
+    height: 60px;
+    padding: 0 35px 0 28px;
+  }
+  /* manime hero */
+  .manime-mirror-hero {
+    width: 100px;
+    height: 100px;
+  }
+  .hentai-hero,
+  .manime-hero {
+    font-size: 2rem;
+  }
+  .explore-a-wide {
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+  }
+  /* slider */
+  .sub-header-slider,
+  .header-slider {
+    font-size: 28px;
+  }
+  .slider-content {
+    flex: 0 0 128px;
+    margin: 0 0.4rem 0 0.4rem;
+  }
+  .slider-title {
+    font-size: 0.75rem;
+  }
+  .slider-img {
+    width: 18px;
+    height: 18px;
+  }
+  .slider-views {
+    font-size: small;
+  }
+  .badge {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+  /* footer */
+  .footer {
+    gap: 50px;
+  }
+  .manime-mirror {
+    width: 80px;
+    height: 80px;
+  }
+  .hentai-footer,
+  .manime-footer {
+    font-size: 26px;
+  }
+  .header-group-footer {
+    font-size: 18px;
+  }
+
+  .text-group-footer {
+    font-size: 14px;
+  }
+}
